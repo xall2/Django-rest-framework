@@ -13,6 +13,8 @@ urlpatterns = [
     path('api/', include('order.urls')),
 
     path('api/token/', TokenObtainPairView.as_view()),
+
+    path('api/posts/', include('posts.urls')),
     
 ] 
 
