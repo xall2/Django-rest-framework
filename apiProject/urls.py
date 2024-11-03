@@ -1,6 +1,12 @@
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework_simplejwt.views import TokenObtainPairView
+#from posts.views import PostViewset
+from rest_framework.routers import DefaultRouter
+
+
+#router = DefaultRouter()
+#router.register("", PostViewset, basename="posts")
 
 
 urlpatterns = [
@@ -15,6 +21,8 @@ urlpatterns = [
     path('api/token/', TokenObtainPairView.as_view()),
 
     path('api/posts/', include('posts.urls')),
+
+    #path('api/posts/', include(router.urls)),
     
 ] 
 

@@ -2,10 +2,11 @@ from django.urls import path
 from . import views
 
 
-
-
 urlpatterns = [
-    path('getAllPosts/', views.getAllPosts, name= 'getAllPosts'),
-    path('addNewPost/', views.addNewPost, name='addNewPost'),
+
+    #by using generic APIView and model mixins
+    path("", views.PostListCreateView.as_view(), name= "listCreatPosts"),
+    path("<int:pk>/", views.PostRetriveUpdateDeleteView.as_view(), name='RetriveUpdateDeletePost'),
+
 
 ]
